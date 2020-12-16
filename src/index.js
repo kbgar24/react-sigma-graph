@@ -51,6 +51,8 @@ class ReactSigmaGraph extends React.Component {
   // redirect to 'link' property of node data
   handleNodeClick(e) {
     if (!this.canClick) return;
+    console.log('node clicked!');
+    console.log({ node: e.node })
     let newUrl = e.data.node.href;
     if (newUrl && window) {
       window.location.href = newUrl;
@@ -297,6 +299,7 @@ class ReactSigmaGraph extends React.Component {
       }, 50);
     });
     this.s.bind('clickNode', (e) => {
+      console.log()
       this.handleNodeClick(e);
     });
   }
